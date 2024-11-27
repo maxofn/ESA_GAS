@@ -36,7 +36,7 @@ prize-winning teams.
 ### Target Gas Data
 
 The competition focused on nowcasting monthly inland gas consumption
-(\[NRG_CB_GASM\]), specifically:
+(\[NRG_CB_GASM\]),
 
 -   \[G3000\] Natural gas
 -   \[IC_CAL_MG\] Inland consumption of gas
@@ -53,8 +53,8 @@ Due to the delay in the publication of official numbers, the program
 aims to benchmark different methodologies and the use of external data
 sources to provide timely estimates for the monthly gas data. An
 effective nowcasting method enables authorities to estimate monthly
-inland gas consumption (e.g., for December 2024) already by the end of
-the corresponding month (e.g., December 31, 2024).
+inland gas consumption (say for December 2024) already by the end of
+the corresponding month (December 31, 2024).
 
 ### Strategy Overview
 
@@ -75,7 +75,7 @@ The methodology was implemented using the R programming language.
 
 Below, we demonstrate the approach by computing a nowcast for the
 monthly gas demand of March 2024 in Slovenia. As of March 31, 2024, the
-official gas demand of Slovenia was available unitl February 2024.
+official gas demand of Slovenia was available until February 2024.
 
 ### Define Time Window
 
