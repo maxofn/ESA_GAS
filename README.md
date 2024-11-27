@@ -178,7 +178,11 @@ summary(fit)
     ## F-statistic: 1.751e+05 on 1 and 45 DF,  p-value: < 2.2e-16
 
 According to the regression summary, the mean gas demand of a specific
-month `i` is modeled by
+month `i` is modeled by 
+
+```math
+E(\texttt{demand}_i) = 0.87 + 3.62 \times \texttt{flow}_{i}.
+```
 
 Here, the slope coefficient of 3.62 reflects the conversion factor from
 GWh to TJ.
