@@ -225,7 +225,7 @@ This competition highlights two main insights:
 
 1.  The use of publicly available ENTSOG data demonstrates significant
     potential for reducing delays in publishing official figures.
-    Identifying relevant gas distribution stations is an issue that
+    Identifying relevant gas distribution stations, however, is an issue that
     needs to be addressed.
 
 2.  For nowcasting, the selection of suitable external data sources is
