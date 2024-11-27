@@ -151,7 +151,7 @@ plot(demand, flow, xlab = "Gas Flow (GWh)", ylab = "Gas Demand (TJ)",
 
 ### Fit a Linear Regression Model
 
-So we fit the simple and widely used linear regression model.
+So we fit a simple linear regression model.
 
 ``` r
 fit <- lm(demand ~ flow)
