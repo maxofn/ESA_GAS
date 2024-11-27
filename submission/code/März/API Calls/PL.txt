@@ -1,0 +1,2 @@
+pl-tso-0002dis-00013exit,pl-tso-0002dis-00193exit&
+pl-tso-0002fnc-00002exit,pl-tso-0002fnc-00007exit,pl-tso-0002fnc-00040exit&

@@ -1,0 +1,2 @@
+fr-tso-0002dis-00188exit,fr-tso-0003dis-00197exit&
+fr-tso-0002fnc-00015exit,fr-tso-0003fnc-00201exit,fr-tso-0003fnc-00202exit&
