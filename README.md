@@ -134,7 +134,7 @@ axis(4, las = 1)
 mtext("Gas Flow (GWh)", side = 4, line = 3)
 
 # Add legend
-legend("topright", legend = c("Gas Demand (TJ)", "Gas Flow (GWh)"), 
+legend(x = months[25], y = 1280, legend = c("Gas Demand (TJ)", "Gas Flow (GWh)"), 
        col = c("blue", "red"), lwd = 2, bty = "n")
 ```
 
