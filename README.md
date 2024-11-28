@@ -27,8 +27,8 @@ forecasts and the Reproducibility Award.
 
 ### Acknowledgements
 
-We express our gratitude to the organizers for this inspiring
-competition and extend our congratulations to all participating and
+We express our gratitude to the organizers for this competition and
+extend our congratulations to all participating and
 prize-winning teams.
 
 ## Description of the Approach
@@ -49,8 +49,8 @@ typically become available after a delay of one or more months.
 
 ### Purpose of Nowcasting
 
-Due to the delay in the publication of official numbers, the program
-aims to benchmark different methodologies and the use of external data
+Due to the delay in the publication of official numbers, the aim is to
+benchmark different methodologies and the use of external data
 sources to provide timely estimates for the monthly gas data. An
 effective nowcasting method enables authorities to estimate monthly
 inland gas consumption (say for December 2024) already by the end of
