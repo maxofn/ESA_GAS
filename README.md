@@ -92,7 +92,7 @@ months <- seq(as.Date(time.begin), as.Date(time.end), "months")
 
 ### Collect gas flow data
 
-We downloaded gas flow (measured in gigawatt-hour, GWh) data from a
+We downloaded gas flow (measured in gigawatt-hours, GWh) data from a
 central distribution station in Slovenia. Although the process is
 automated via the ENTSOG API, we provide monthly aggregates in a CSV
 file for a simplified presentation.
@@ -104,7 +104,7 @@ flow <- read.csv("data_example/gas_flow_monthly.csv")$flow
 ### Collect Official Gas Demand Data
 
 Similarly, we downloaded official Eurostat gas demand data (measured in
-terajoule, TJ) and provide the preprocessed data as a CSV file.
+terajoules, TJ) and provide the preprocessed data as a CSV file.
 
 ``` r
 demand <- read.csv("data_example/gas_demand.csv")$demand
