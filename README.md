@@ -75,7 +75,8 @@ The methodology was implemented using the R programming language.
 ## Illustration
 
 Below, we demonstrate the approach by computing a nowcast for the
-monthly gas demand of March 2024 in Slovenia. As of March 31, 2024, the
+monthly gas demand of March 2024 in Slovenia. As of March 31 (the
+submission deadline for the March 2024 nowcast), the
 official gas demand of Slovenia was available until February 2024.
 
 ### Define Time Window
@@ -93,7 +94,7 @@ months <- seq(as.Date(time.begin), as.Date(time.end), "months")
 
 ### Collect gas flow data
 
-We downloaded gas flow (measured in gigawatt-hours, GWh) data from a
+We download gas flow data (measured in gigawatt-hours, GWh) from a
 central distribution station in Slovenia. Although the process is
 automated via the ENTSOG API, we provide monthly aggregates in a CSV
 file for a simplified presentation.
@@ -104,7 +105,7 @@ flow <- read.csv("data_example/gas_flow_monthly.csv")$flow
 
 ### Collect Official Gas Demand Data
 
-Similarly, we downloaded official Eurostat gas demand data (measured in
+Similarly, we download official Eurostat gas demand data (measured in
 terajoules, TJ) and provide the preprocessed data as a CSV file.
 
 ``` r
@@ -152,7 +153,12 @@ plot(demand, flow, xlab = "Gas Flow (GWh)", ylab = "Gas Demand (TJ)",
 
 ### Fit a Linear Regression Model
 
-So we fit a simple linear regression model.
+In principle, estimating the total gas flow should yield reasonably accurate
+estimates of total consumption (apart from unit conversion). However, this
+approach may not fully account for systematic factors (e.g., loss of gas during transport,
+additional stations that were not identified). To address these potential
+discrepancies, we fit a simple linear regression model, considering monthly gas flow
+as the predictor and gas demand as the response.
 
 ``` r
 fit <- lm(demand ~ flow)
@@ -186,16 +192,17 @@ E(\texttt{demand}_i) = 0.87 + 3.62 \times \texttt{flow}_{i}.
 ```
 
 Here, the slope coefficient of 3.62 reflects the conversion factor from
-GWh to TJ.
+GWh to TJ. For the case of Slovenia, the intercept term is not significant.
+However, we retain it in the model, noting that it was found to be significant
+in other countries.
 
 ### Obtain Nowcast
 
 To nowcast March 2024, we need a proxy for the total gas flow in this
-month. As of March 31, 2024 (the submission deadline for the March 2024
-nowcast), gas flow data were available for March 1–30. In other months
+month. As of March 31, 2024, gas flow data were available for March 1–30. In other months
 and countries, data for multiple days were often missing. To address
-this, we calculated the average daily flow by dividing the total flow of
-the available days by the number of observed days. We then multiplied
+this, we calculate the average daily flow by dividing the total flow of
+the available days by the number of observed days. We then multiply
 this average by the total number of days in the month to estimate the
 total flow for the month.
 
@@ -218,7 +225,7 @@ nowcast
 The nowcasted inland gas demand for Slovenia in March 2024 is 3309.962
 GWh. A similar approach is applied to other countries, using data from
 multiple stations if necessary. Note that correlations between flow and
-demand vary by country.
+demand vary by country. 
 
 ## Key Takeaways
 
