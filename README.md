@@ -154,7 +154,7 @@ plot(demand, flow, xlab = "Gas Flow (GWh)", ylab = "Gas Demand (TJ)",
 ### Fit a Linear Regression Model
 
 In principle, estimating the total gas flow should yield reasonably accurate
-estimates of total consumption (apart from unit conversion). However, this
+estimates for the demand (apart from unit conversion). However, this
 approach may not fully account for systematic factors (e.g., loss of gas during transport,
 additional stations that were not identified). To address these potential
 discrepancies, we fit a simple linear regression model, considering monthly gas flow
