@@ -223,7 +223,7 @@ nowcast
     ## 3309.962
 
 The nowcasted inland gas demand for Slovenia in March 2024 is 3309.962
-GWh. A similar approach is applied to other countries, using data from
+GWh. A similar approach was applied to other countries, using data from
 multiple stations if necessary. Note that correlations between flow and
 demand vary by country. 
 
