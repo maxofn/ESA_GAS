@@ -65,7 +65,8 @@ Network of Transmission System Operators for Gas (ENTSOG). These data
 are [publically available](https://transparency.entsog.eu) and generally
 published within a few days, in contrast to the months-long delay of
 Eurostat figures. Using these data, we computed nowcasts for each
-country separately. The methodology is described below.
+country separately via a simple linear regression model. The methodology
+is described below.
 
 ### Software Used
 
