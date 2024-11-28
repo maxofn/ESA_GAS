@@ -208,7 +208,7 @@ total flow for the month.
 
 ``` r
 flow_march <- read.csv("data_example/gas_flow_march.csv")$flow
-ndays <- 31
+ndays <- 31 # There are 31 days in March
 flow_march_aggregate <- mean(flow_march) * ndays
 ```
 
