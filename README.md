@@ -36,7 +36,7 @@ prize-winning teams.
 ### Target Gas Data
 
 The competition focused on nowcasting monthly inland gas consumption
-(\[NRG_CB_GASM\]), specifically:
+(\[NRG_CB_GASM\]),
 
 -   \[G3000\] Natural gas
 -   \[IC_CAL_MG\] Inland consumption of gas
@@ -53,8 +53,8 @@ Due to the delay in the publication of official numbers, the program
 aims to benchmark different methodologies and the use of external data
 sources to provide timely estimates for the monthly gas data. An
 effective nowcasting method enables authorities to estimate monthly
-inland gas consumption (e.g., for December 2024) already by the end of
-the corresponding month (e.g., December 31, 2024).
+inland gas consumption (say for December 2024) already by the end of
+the corresponding month (December 31, 2024).
 
 ### Strategy Overview
 
@@ -65,7 +65,8 @@ Network of Transmission System Operators for Gas (ENTSOG). These data
 are [publically available](https://transparency.entsog.eu) and generally
 published within a few days, in contrast to the months-long delay of
 Eurostat figures. Using these data, we computed nowcasts for each
-country separately. The methodology is described below.
+country separately via a simple linear regression model. The methodology
+is described below.
 
 ### Software Used
 
@@ -75,7 +76,7 @@ The methodology was implemented using the R programming language.
 
 Below, we demonstrate the approach by computing a nowcast for the
 monthly gas demand of March 2024 in Slovenia. As of March 31, 2024, the
-official gas demand of Slovenia was available unitl February 2024.
+official gas demand of Slovenia was available until February 2024.
 
 ### Define Time Window
 
@@ -92,7 +93,7 @@ months <- seq(as.Date(time.begin), as.Date(time.end), "months")
 
 ### Collect gas flow data
 
-We downloaded gas flow (measured in gigawatt-hour, GWh) data from a
+We downloaded gas flow (measured in gigawatt-hours, GWh) data from a
 central distribution station in Slovenia. Although the process is
 automated via the ENTSOG API, we provide monthly aggregates in a CSV
 file for a simplified presentation.
@@ -104,7 +105,7 @@ flow <- read.csv("data_example/gas_flow_monthly.csv")$flow
 ### Collect Official Gas Demand Data
 
 Similarly, we downloaded official Eurostat gas demand data (measured in
-terajoule, TJ) and provide the preprocessed data as a CSV file.
+terajoules, TJ) and provide the preprocessed data as a CSV file.
 
 ``` r
 demand <- read.csv("data_example/gas_demand.csv")$demand
@@ -151,7 +152,7 @@ plot(demand, flow, xlab = "Gas Flow (GWh)", ylab = "Gas Demand (TJ)",
 
 ### Fit a Linear Regression Model
 
-So we fit the simple and widely used linear regression model.
+So we fit a simple linear regression model.
 
 ``` r
 fit <- lm(demand ~ flow)
@@ -178,7 +179,11 @@ summary(fit)
     ## F-statistic: 1.751e+05 on 1 and 45 DF,  p-value: < 2.2e-16
 
 According to the regression summary, the mean gas demand of a specific
-month `i` is modeled by
+month `i` is modeled by 
+
+```math
+E(\texttt{demand}_i) = 0.87 + 3.62 \times \texttt{flow}_{i}.
+```
 
 Here, the slope coefficient of 3.62 reflects the conversion factor from
 GWh to TJ.
@@ -221,7 +226,7 @@ This competition highlights two main insights:
 
 1.  The use of publicly available ENTSOG data demonstrates significant
     potential for reducing delays in publishing official figures.
-    Identifying relevant gas distribution stations is an issue that
+    Identifying relevant gas distribution stations, however, is an issue that
     needs to be addressed.
 
 2.  For nowcasting, the selection of suitable external data sources is
